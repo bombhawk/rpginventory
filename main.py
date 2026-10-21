@@ -1,11 +1,3 @@
-"""A small RPG inventory system used to demonstrate software testing.
-
-Run the demo with:
-    python main.py
-Run the automated tests with:
-    python -m pytest -v
-"""
-
 from dataclasses import dataclass, field
 
 

@@ -1,11 +1,3 @@
-"""Automated tests for the RPG inventory system.
-
-The tests are grouped by purpose:
-- Unit tests: individual methods and rules
-- Integration tests: inventory and health behavior working together
-- System tests: a complete player workflow
-"""
-
 import pytest
 
 from main import Item, Player
@@ -106,7 +98,6 @@ def test_full_inventory_does_not_allow_potion_use_without_potion():
 
 #System tests
 def test_complete_workflow_collect_use_and_check_final_state():
-    """A full workflow: start injured, collect potion, use it, verify state."""
     player = Player(health=60, inventory_capacity=2)
 
     assert player.health == 60
@@ -119,7 +110,6 @@ def test_complete_workflow_collect_use_and_check_final_state():
 
 
 def test_complete_workflow_with_near_maximum_health():
-    """The complete workflow should cap health at max and consume the potion."""
     player = Player(health=90)
     player.collect_item(Item("Health Potion", "potion"))
 
